@@ -1,0 +1,10 @@
+:root {
+  /* color */
+  --c-magenta: rgb(115 44 153);
+  --c-light-grey: rgb(157, 157, 157);
+  --c-blue: #0378ed;
+
+  /* font-families */
+  --ff-roboto: 'Roboto Mono', monospace;
+  --ff-gloock: 'Gloock', serif;
+}
