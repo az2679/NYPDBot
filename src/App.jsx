@@ -7,10 +7,11 @@ import './styles/global.css';
 import Scene from './BackgroundScene/Scene';
 import { AnimationTimeline } from './BackgroundScene/AnimationTimeline';
 
-/**
+/*
  * This function will calculate how much the user has scrolled (0-1)
  * @returns {number} The percentage of how much the user has scrolled (0-1)
  */
+
 function getScrollProgress() {
   // This will calculate how many pixels the page is vertically
   const winScroll = window.document.documentElement.scrollTop;
@@ -26,12 +27,15 @@ function App() {
     // We then register a callback that executes every time the user scrolls
     window.onscroll = (e) => {
       const scrolled = getScrollProgress();
-      // console.log(`Scroll progress: ${progress}`);
+
+      // console.log(`Scroll progress: ${scrolled}`);
+
       AnimationTimeline.progress(scrolled);
       return () => {
         // We unregister the callback when the component unmounts
         window.onscroll = null;
       };
+
     };
   }, []);
 

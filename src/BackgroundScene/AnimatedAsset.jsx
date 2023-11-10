@@ -5,6 +5,32 @@ import { AnimationTimeline } from "./AnimationTimeline";
 import styles from '../ProjectCard/ProjectCard.module.css';
 
 
+function AnimatedCoolMaker(props) {
+  const { fadeInKey, fadeOutKey, position, children } = props;
+  const labelRef = useRef();
+  useEffect(() => {
+    AnimationTimeline.to(
+      labelRef.current.style,
+      {
+        opacity:1
+      },
+      fadeInKey
+    );
+
+    AnimationTimeline.to(
+      labelRef.current.style,
+      {
+        opacity: 0
+      },
+      fadeOutKey
+    );
+  }, [labelRef, fadeOutKey, fadeInKey]);
+  return(
+    <Html ref={labelRef} position={position}>
+      <div className={styles.annotation}>{children}</div>
+    </Html>
+  );
+}
 
 function AnimatedAsset(props) {
   const modelRef = useRef();
@@ -12,80 +38,29 @@ function AnimatedAsset(props) {
   const { position, scale, modelUrl } = props;
   const gltf = useGLTF(modelUrl);
 
-  const headRef = useRef();
-  const torsoRef = useRef();
-  const handRef = useRef();
-
   useEffect(() => {
-    
     AnimationTimeline.to(
-      modelRef.current.rotation,
+      group.current.rotation,
       {
         y: 3,
-      },
-      "closeup"
-    );
-
-    AnimationTimeline.to(
-      modelRef.current.rotation,
-      {
-        y: 9,
-      },
-      "hand"
-    );
-  }, [group]);
-
-
-  useEffect(() => {
-
-    AnimationTimeline.to(
-      headRef.current.style,
-      {
-        opacity:1
       },
       "head"
     );
     AnimationTimeline.to(
-      headRef.current.style,
+      group.current.rotation,
       {
-        opacity: 0
-      },
-      "torso"
-    );
-
-    AnimationTimeline.to(
-      torsoRef.current.style,
-      {
-        opacity:1
+        y: 9,
       },
       "torso"
     );
     AnimationTimeline.to(
-      torsoRef.current.style,
+      group.current.rotation,
       {
-        opacity: 0
+        y: 15,
       },
       "hand"
     );
-
-    AnimationTimeline.to(
-      handRef.current.style,
-      {
-        opacity:1
-      },
-      "hand"
-    );
-    AnimationTimeline.to(
-      handRef.current.style,
-      {
-        opacity: 0
-      },
-      "fullshot"
-    );
-  }, []);
-
-
-
+  }, [group]);
 
   return (
     <group ref={group} dispose={null}>
@@ -96,25 +71,21 @@ function AnimatedAsset(props) {
         rotation={[0, 0, 0]}
         object={gltf.scene}
       >
-
-        <Html  position={[1.5, 2.5, 0]}>
-          <div className={styles.annotation} >Head</div>
-        </Html>
-        <Html position={[2, 1.2, 0]}>
-          <div className={styles.annotation} >Torso</div>
-        </Html>
-
-        <Html position={[0.5, 0.5, 0]}>
-          <div className={styles.annotationline}>Hand</div>
-        </Html>
-
       </primitive>
 
-      {/* <Html ref={labelRef} fadeInKey={"torso"} fadeOutKey={"hand"}  position={[1, 2.5, 0]} >please work</Html> */}
-      <Html ref={headRef}   position={[1, 2.5, 0]} >please work1</Html>
-      <Html ref={torsoRef}  position={[2, 1.2, 0]} >please work2</Html>
-      <Html ref={handRef}  position={[0.5, 0.5, 0]} >please work3</Html>
+      <AnimatedCoolMaker fadeInKey={"head"} fadeOutKey={"torso"} position={[1.5, 2.5, 0]}>Head</AnimatedCoolMaker>
+      <AnimatedCoolMaker fadeInKey={"torso"} fadeOutKey={"hand"} position={[2, 1.2, 0]}>Torso</AnimatedCoolMaker>
+      <AnimatedCoolMaker fadeInKey={"hand"} fadeOutKey={"fullshot"} position={[0.5, 0.5, 0]}>Hand</AnimatedCoolMaker>
       
+      {/* <Html ref={labelRef}  position={[1.5, 2.5, 0]} opacity={0}>
+        <div className={styles.annotation}>Head</div>
+      </Html>
+      <Html  position={[2, 1.2, 0]} opacity={0}>
+        <div className={styles.annotation}>Torso</div>
+      </Html>
+      <Html  position={[0.5, 0.5, 0]} opacity={0}>
+        <div className={styles.annotation}>Hand</div>
+      </Html> */}
 
     </group>
 

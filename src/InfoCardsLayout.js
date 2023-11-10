@@ -1,37 +1,11 @@
-// import { useRef, useEffect } from 'react';
 import React from 'react';
 // import styles from './LandingPage.module.css';
 import InfoCard from './InfoCard';
-// import { AnimationTimeline } from './BackgroundScene/AnimationTimeline';
 
-export default function InfoCardsLayout(props) {
-  // const cardRef = useRef();
-
-  // const { fadeInKey, fadeOutKey } = props;
-
-  // useEffect(() => {
-  //   AnimationTimeline.to(
-  //     cardRef.current.style,
-  //     {
-  //       opacity: 1,
-  //     },
-  //     fadeInKey
-  //   );
-  //   AnimationTimeline.to(
-  //     cardRef.current.style,
-  //     {
-  //       opacity: 0,
-  //     },
-  //     fadeOutKey
-  //   );
-  // }, [cardRef]);
-
-  //<Label fadeInKey={"fullshot"} fadeOutKey={"torso"} >
-
+export default function InfoCardsLayout() {
   return (
     <>
       <InfoCard
-        // ref={cardRef}
         left={10}
         width={20}
         top={100}
@@ -43,7 +17,6 @@ export default function InfoCardsLayout(props) {
       />
 
       <InfoCard
-        // ref={cardRef}
         left={10}
         width={20}
         top={200}
@@ -55,7 +28,6 @@ export default function InfoCardsLayout(props) {
       />
 
       <InfoCard
-        // ref={cardRef}
         left={70}
         width={20}
         top={250}

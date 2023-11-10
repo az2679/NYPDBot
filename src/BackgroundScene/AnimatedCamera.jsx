@@ -8,33 +8,12 @@ function AnimatedCamera() {
   const cameraRef = useRef();
 
   useEffect(() => {
-
     AnimationTimeline.to(
       cameraRef.current.position,
       {
         x: 0,
-        y: 4,
-        z: 6,
-      },
-      "head"
-    );
-
-    AnimationTimeline.to(
-      cameraRef.current.position,
-      {
-        x: 0,
-        y: 2,
-        z: 13,
-      },
-      "closeup1"
-    );
-
-    AnimationTimeline.to(
-      cameraRef.current.position,
-      {
-        x: 0,
-        y: 2,
-        z: 13,
+        y: 3,
+        z: 10,
       },
       "closeup"
     );
@@ -46,9 +25,17 @@ function AnimatedCamera() {
         y: 2,
         z: 13,
       },
+      "head"
+    );
+    AnimationTimeline.to(
+      cameraRef.current.position,
+      {
+        x: 0,
+        y: 2,
+        z: 13,
+      },
       "torso"
     );
-
     AnimationTimeline.to(
       cameraRef.current.position,
       {
@@ -68,8 +55,10 @@ function AnimatedCamera() {
       },
       "fullshot"
     );
+    // console.log(AnimationTimeline)
+  }, []);
 
-  }, [cameraRef]);
+
 
 
 
