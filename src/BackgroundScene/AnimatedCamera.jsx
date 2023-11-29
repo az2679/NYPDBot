@@ -56,7 +56,7 @@ function AnimatedCamera() {
       "fullshot"
     );
     // console.log(AnimationTimeline)
-  }, []);
+  }, [cameraRef]);
 
 
 

@@ -8,7 +8,10 @@ import styles from '../ProjectCard/ProjectCard.module.css';
 function AnimatedCoolMaker(props) {
   const { fadeInKey, fadeOutKey, position, children } = props;
   const labelRef = useRef();
+
+ 
   useEffect(() => {
+ if(labelRef.current.style){
     AnimationTimeline.to(
       labelRef.current.style,
       {
@@ -24,7 +27,10 @@ function AnimatedCoolMaker(props) {
       },
       fadeOutKey
     );
+  }
   }, [labelRef, fadeOutKey, fadeInKey]);
+
+
   return(
     <Html ref={labelRef} position={position}>
       <div className={styles.annotation}>{children}</div>
