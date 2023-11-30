@@ -1,11 +1,13 @@
 import { useRef, useEffect } from 'react';
-import { useGLTF, Html } from '@react-three/drei';
 import { AnimationTimeline } from "./AnimationTimeline";
+import { Html } from '@react-three/drei';
+import { useLoader } from '@react-three/fiber'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import styles from '../ProjectCard/ProjectCard.module.css';
 
 
-function AnimatedCoolMaker(props) {
+function AnimatedLabel(props) {
   const { fadeInKey, fadeOutKey, position, children } = props;
   const labelRef = useRef();
 
@@ -41,8 +43,8 @@ function AnimatedCoolMaker(props) {
 function AnimatedAsset(props) {
   const modelRef = useRef();
   const group = useRef();
-  const { position, scale, modelUrl } = props;
-  const gltf = useGLTF(modelUrl);
+  const { position, scale } = props;
+  const gltf = useLoader(GLTFLoader, '/k5_nypdrobot.glb')
 
   useEffect(() => {
     AnimationTimeline.to(
@@ -79,9 +81,9 @@ function AnimatedAsset(props) {
       >
       </primitive>
 
-      <AnimatedCoolMaker fadeInKey={"head"} fadeOutKey={"torso"} position={[1.5, 2.5, 0]}>Head</AnimatedCoolMaker>
-      <AnimatedCoolMaker fadeInKey={"torso"} fadeOutKey={"hand"} position={[2, 1.2, 0]}>Torso</AnimatedCoolMaker>
-      <AnimatedCoolMaker fadeInKey={"hand"} fadeOutKey={"fullshot"} position={[0.5, 0.5, 0]}>Hand</AnimatedCoolMaker>
+      <AnimatedLabel fadeInKey={"head"} fadeOutKey={"torso"} position={[1.5, 2.5, 0]}>Head</AnimatedLabel>
+      <AnimatedLabel fadeInKey={"torso"} fadeOutKey={"hand"} position={[2, 1.2, 0]}>Torso</AnimatedLabel>
+      <AnimatedLabel fadeInKey={"hand"} fadeOutKey={"fullshot"} position={[0.5, 0.5, 0]}>Hand</AnimatedLabel>
       
       {/* <Html ref={labelRef}  position={[1.5, 2.5, 0]} opacity={0}>
         <div className={styles.annotation}>Head</div>
