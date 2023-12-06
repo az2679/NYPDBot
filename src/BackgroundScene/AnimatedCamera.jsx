@@ -25,7 +25,7 @@ function AnimatedCamera() {
         y: 2,
         z: 13,
       },
-      "head"
+      "button"
     );
     AnimationTimeline.to(
       cameraRef.current.position,
@@ -34,7 +34,43 @@ function AnimatedCamera() {
         y: 2,
         z: 13,
       },
-      "torso"
+      "button1"
+    );
+    AnimationTimeline.to(
+      cameraRef.current.position,
+      {
+        x: 0,
+        y: 2,
+        z: 13,
+      },
+      "button2"
+    );
+    AnimationTimeline.to(
+      cameraRef.current.position,
+      {
+        x: 0,
+        y: 2,
+        z: 13,
+      },
+      "camera"
+    );
+    AnimationTimeline.to(
+      cameraRef.current.position,
+      {
+        x: 0,
+        y: 2,
+        z: 13,
+      },
+      "camera1"
+    );
+    AnimationTimeline.to(
+      cameraRef.current.position,
+      {
+        x: 0,
+        y: 2,
+        z: 13,
+      },
+      "camera2"
     );
     AnimationTimeline.to(
       cameraRef.current.position,
@@ -55,8 +91,19 @@ function AnimatedCamera() {
       },
       "fullshot"
     );
-    // console.log(AnimationTimeline)
+    console.log(AnimationTimeline.labels)
   }, [cameraRef]);
+
+  AnimationTimeline.labels.closeup = 0
+  AnimationTimeline.labels.button = 0.5
+  AnimationTimeline.labels.button1 = 1
+  AnimationTimeline.labels.button2 = 1.5
+  AnimationTimeline.labels.camera = 2
+  AnimationTimeline.labels.camera1 = 2.5
+  AnimationTimeline.labels.camera2 = 3
+  AnimationTimeline.labels.fullshot = 3.5
+
+  
 
 
 

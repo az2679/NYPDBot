@@ -26,7 +26,6 @@ function Scene() {
           <AnimatedAsset />
           {/* <AnimatedLabel /> */}
 
-
           <meshStandardMaterial roughness={0.3} metalness={0.6} />
         </Suspense>
       </Canvas>
