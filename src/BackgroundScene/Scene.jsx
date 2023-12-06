@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import AnimatedCamera from './AnimatedCamera';
 import styles from '../ProjectCard/ProjectCard.module.css';
 import AnimatedAsset from './AnimatedAsset';
+import RingHighlight from './RingHighlight';
 
 function Scene() {
   return (
@@ -25,6 +26,9 @@ function Scene() {
 
           <AnimatedAsset />
           {/* <AnimatedLabel /> */}
+
+          <RingHighlight fadeInKey={'button2'} fadeOutKey={'button3'} position={[0, 2.9, 0]} /> 
+          <RingHighlight fadeInKey={'camera1'} fadeOutKey={'fullshot'} position={[0, 3.825, 0]} /> 
 
           <meshStandardMaterial roughness={0.3} metalness={0.6} />
         </Suspense>
