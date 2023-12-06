@@ -4,13 +4,13 @@ import InfoCard from './InfoCard';
 
 export default function InfoCardsLayout() {
   return (
-    <group>
+    <>
       <InfoCard
         fadeInKey={'button'}
         fadeOutKey={'button2'}
         left={10}
         width={20}
-        top={100}
+        top={2}
         header={''}
         paragraph={`When the button is pressed, the robot will connect you to a live agent who is available 24/7 for questions, concerns, or incident reports.`}
       />
@@ -18,7 +18,7 @@ export default function InfoCardsLayout() {
       <InfoCard
         left={70}
         width={20}
-        top={105}
+        top={205}
         header={''}
         paragraph={`“This call may be recorded for your safety.”`}
         fadeInKey={'button'}
@@ -45,6 +45,6 @@ export default function InfoCardsLayout() {
         fadeOutKey={'fullshot'}
       />
 
-    </group>
+    </>
   );
 }

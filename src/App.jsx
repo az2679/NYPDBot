@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+// import { Canvas } from '@react-three/fiber';
 import Landing from './Landing';
 import InfoCardsLayout from './InfoCardsLayout';
 import styles from './ProjectCard/ProjectCard.module.css';
@@ -42,9 +42,11 @@ function App() {
   return (
     <div className={styles.article_wrapper}>
       <Landing />
-      
+      {/* <InfoCardsLayout /> */}
 
-      <Scene />
+    <Scene />
+
+
       {/* <Scene>
       <InfoCardsLayout />
       </Scene> */}

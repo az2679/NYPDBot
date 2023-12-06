@@ -10,15 +10,15 @@ export default function AnimatedLabel(props) {
 
   // console.log(labelRef)
 
-  useEffect(() => {
-    console.log('Component mounted');
-    return () => console.log('Component will unmount');
-  }, []);
+  // useEffect(() => {
+  //   console.log('Component mounted');
+  //   return () => console.log('Component will unmount');
+  // }, []);
   
-  useEffect(() => {
-    console.log('labelRef changed:', labelRef.current);
-    // Rest of the effect logic
-  }, [labelRef, fadeOutKey, fadeInKey]);
+  // useEffect(() => {
+  //   console.log('labelRef changed:', labelRef.current);
+  //   // Rest of the effect logic
+  // }, [labelRef, fadeOutKey, fadeInKey]);
   
   
   useEffect(() => {

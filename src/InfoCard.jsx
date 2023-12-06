@@ -8,38 +8,42 @@ export default function InfoCard(props) {
   const { fadeInKey, fadeOutKey, left, width, top, header, paragraph } = props;
   const cardRef = useRef();
 
-  useEffect(() => {
-    console.log('InfoCard component rendered');
-    // ... rest of the logic
-  }, [cardRef, fadeOutKey, fadeInKey]);
+  // useEffect(() => {
+  //   console.log('InfoCard component rendered');
+  //   if (cardRef.current && cardRef.current.style) {
+  //     console.log(cardRef.current.style)
+  //   }
+  //   // ... rest of the logic
+  // }, [cardRef, fadeOutKey, fadeInKey]);
 
 
   useEffect(() => {
-    console.log('InfoCard useEffect fired');
+    // console.log('InfoCard useEffect fired');
     if (cardRef.current && cardRef.current.style) {
-      console.log('Animating opacity to 1');
-      AnimationTimeline.to(
-        cardRef.current.style,
-        {
-          opacity: 1,
-        },
-        fadeInKey
-      );
+      // console.log('Animating opacity to 1');
+      console.log(cardRef.current.style)
+    //   AnimationTimeline.to(
+    //     cardRef.current.style,
+    //     {
+    //       opacity: 1,
+    //     },
+    //     fadeInKey
+    //   );
   
-      AnimationTimeline.to(
-        cardRef.current.style,
-        {
-          opacity: 0,
-        },
-        fadeOutKey
-      );
+    //   AnimationTimeline.to(
+    //     cardRef.current.style,
+    //     {
+    //       opacity: 0,
+    //     },
+    //     fadeOutKey
+    //   );
     }
   }, [cardRef, fadeOutKey, fadeInKey]);
 
-  console.log('InfoCard rendering');
+  // console.log('InfoCard rendering');
 
   return (
-    <Html ref={cardRef} style={{ opacity: '0' }}>
+    <Html ref={cardRef} style={{ opacity: '1', visibility: 'visible'}}>
       <div
         className={styles.info_wrapper}
         style={{ left: `${left}vw`, width: `${width}vw`, top: `${top}vh` }}

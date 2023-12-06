@@ -13,8 +13,8 @@ function Scene() {
         <AnimatedCamera />
 
         <Suspense fallback={null}>
-          <AnimatedAsset />
           <InfoCardsLayout />
+          <AnimatedAsset />
         </Suspense>
 
         {/* Lights 💡 */}
@@ -26,7 +26,8 @@ function Scene() {
         <color args={['white']} attach="background" />
 
         {/* Objects 📦 */}
-        {/* <meshStandardMaterial roughness={0.3} metalness={0.6} /> */}
+        {/* <meshStandardMaterial roughness={0.3} metalness={0.6} /> */}         
+
       </Canvas>
     </div>
   );
