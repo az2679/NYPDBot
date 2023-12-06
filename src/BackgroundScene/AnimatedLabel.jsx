@@ -5,13 +5,13 @@ import { AnimationTimeline } from "./AnimationTimeline";
 
 
 export default function AnimatedLabel(props) {
-  const { fadeInKey, fadeOutKey, position, children, style } = props;
+  const { fadeInKey, fadeOutKey, position, children } = props;
   const labelRef = useRef();
 
  
   useEffect(() => {
-    console.log(labelRef.current.style)
- if(labelRef.current.style){
+ if(labelRef.current & labelRef.current.style){
+  console.log(labelRef.current.style)
     AnimationTimeline.to(
       labelRef.current.style,
       {
