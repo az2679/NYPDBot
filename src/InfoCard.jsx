@@ -22,31 +22,31 @@ export default function InfoCard(props) {
     if (cardRef.current && cardRef.current.style) {
       // console.log('Animating opacity to 1');
       console.log(cardRef.current.style)
-    //   AnimationTimeline.to(
-    //     cardRef.current.style,
-    //     {
-    //       opacity: 1,
-    //     },
-    //     fadeInKey
-    //   );
+      AnimationTimeline.to(
+        cardRef.current.style,
+        {
+          opacity: 1,
+        },
+        fadeInKey
+      );
   
-    //   AnimationTimeline.to(
-    //     cardRef.current.style,
-    //     {
-    //       opacity: 0,
-    //     },
-    //     fadeOutKey
-    //   );
+      AnimationTimeline.to(
+        cardRef.current.style,
+        {
+          opacity: 1,
+        },
+        fadeOutKey
+      );
     }
   }, [cardRef, fadeOutKey, fadeInKey]);
 
   // console.log('InfoCard rendering');
 
   return (
-    <Html ref={cardRef} style={{ opacity: '1', visibility: 'visible'}}>
+    <Html ref={cardRef} style={{ opacity: '1'}}>
       <div
         className={styles.info_wrapper}
-        style={{ left: `${left}vw`, width: `${width}vw`, top: `${top}vh` }}
+        style={{ left: `${left}px`, width: `${width}px`, top: `${top}px` }}
       >
         <div className={styles.info_header}>{header}</div>
         <div className={styles.info_paragraph}>{paragraph}</div>

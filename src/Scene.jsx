@@ -7,13 +7,15 @@ import InfoCardsLayout from './InfoCardsLayout';
 
 function Scene() {
   return (
-    <div className={styles.canvas_wrapper}>
-      <Canvas>
+    <>
+
+
+      {/* <Canvas> */}
         {/* Camera 🎥 */}
         <AnimatedCamera />
 
         <Suspense fallback={null}>
-          <InfoCardsLayout />
+          {/* <InfoCardsLayout /> */}
           <AnimatedAsset />
         </Suspense>
 
@@ -28,8 +30,9 @@ function Scene() {
         {/* Objects 📦 */}
         {/* <meshStandardMaterial roughness={0.3} metalness={0.6} /> */}         
 
-      </Canvas>
-    </div>
+      {/* </Canvas> */}
+  
+    </>
   );
 }
 

@@ -6,19 +6,19 @@ export default function InfoCardsLayout() {
   return (
     <>
       <InfoCard
-        fadeInKey={'button'}
-        fadeOutKey={'button2'}
-        left={10}
-        width={20}
-        top={2}
+        fadeInKey={'closeup'}
+        fadeOutKey={'fullshot'}
+        left={1}
+        width={2}
+        top={0.5}
         header={''}
         paragraph={`When the button is pressed, the robot will connect you to a live agent who is available 24/7 for questions, concerns, or incident reports.`}
       />
 
       <InfoCard
-        left={70}
-        width={20}
-        top={205}
+        left={7}
+        width={2}
+        top={1}
         header={''}
         paragraph={`“This call may be recorded for your safety.”`}
         fadeInKey={'button'}
