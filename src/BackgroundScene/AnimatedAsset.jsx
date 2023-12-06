@@ -44,8 +44,8 @@ function AnimatedAsset(props) {
       >
       </primitive>
 
-      <AnimatedLabel fadeInKey={"button"} fadeOutKey={"button2"} position={[1.5, 2.5, 0]}>Button</AnimatedLabel>
-      <AnimatedLabel fadeInKey={"camera"} fadeOutKey={"camera2"} position={[2, 1.2, 0]}>Camera</AnimatedLabel>
+      <AnimatedLabel fadeInKey={"button1"} fadeOutKey={"button2"} position={[0.1, 2.5, 0]}>Button</AnimatedLabel>
+      <AnimatedLabel fadeInKey={"camera1"} fadeOutKey={"fullshot"} position={[-0.8, 4.1, 0]}>Camera</AnimatedLabel>
       {/* <AnimatedLabel fadeInKey={"hand"} fadeOutKey={"fullshot"} position={[0.5, 0.5, 0]}>Hand</AnimatedLabel> */}
     </group>
 
