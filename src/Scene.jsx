@@ -1,9 +1,9 @@
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
-
+import styles from './ProjectCard/ProjectCard.module.css';
 import AnimatedCamera from './AnimatedCamera';
-import styles from '../ProjectCard/ProjectCard.module.css';
 import AnimatedAsset from './AnimatedAsset';
+import InfoCardsLayout from './InfoCardsLayout';
 
 function Scene() {
   return (
@@ -11,6 +11,11 @@ function Scene() {
       <Canvas>
         {/* Camera 🎥 */}
         <AnimatedCamera />
+
+        <Suspense fallback={null}>
+          <AnimatedAsset />
+          <InfoCardsLayout />
+        </Suspense>
 
         {/* Lights 💡 */}
         <ambientLight intensity={1} />
@@ -21,16 +26,11 @@ function Scene() {
         <color args={['white']} attach="background" />
 
         {/* Objects 📦 */}
-        <Suspense fallback={null}>
-
-          <AnimatedAsset />
-          {/* <AnimatedLabel /> */}
-
-          <meshStandardMaterial roughness={0.3} metalness={0.6} />
-        </Suspense>
+        {/* <meshStandardMaterial roughness={0.3} metalness={0.6} /> */}
       </Canvas>
     </div>
   );
 }
+
 
 export default Scene;

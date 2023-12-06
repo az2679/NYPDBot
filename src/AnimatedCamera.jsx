@@ -8,6 +8,20 @@ function AnimatedCamera() {
   const cameraRef = useRef();
 
   useEffect(() => {
+
+      // const updateProgress = () => {
+      //   console.log('Animation Progress:', AnimationTimeline.progress());
+      // };
+    
+      // AnimationTimeline.eventCallback('onUpdate', updateProgress);
+    
+      // // Clean up the callback on component unmount
+      // return () => {
+      //   AnimationTimeline.eventCallback('onUpdate', null);
+      // };
+
+
+
     AnimationTimeline.to(
       cameraRef.current.position,
       {
@@ -103,7 +117,7 @@ function AnimatedCamera() {
   AnimationTimeline.labels.camera2 = 3
   AnimationTimeline.labels.fullshot = 3.5
 
-  
+
 
 
 

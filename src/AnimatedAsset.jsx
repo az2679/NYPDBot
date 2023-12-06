@@ -9,30 +9,6 @@ function AnimatedAsset(props) {
   const { position, scale } = props;
   const gltf = useLoader(GLTFLoader, '/k5_nypdrobot.glb')
 
-  // useEffect(() => {
-  //   AnimationTimeline.to(
-  //     group.current.rotation,
-  //     {
-  //       y: 3,
-  //     },
-  //     "button"
-  //   );
-  //   AnimationTimeline.to(
-  //     group.current.rotation,
-  //     {
-  //       y: 9,
-  //     },
-  //     "torso"
-  //   );
-  //   AnimationTimeline.to(
-  //     group.current.rotation,
-  //     {
-  //       y: 15,
-  //     },
-  //     "hand"
-  //   );
-  // }, [group]);
-
   return (
     <group ref={group} dispose={null}>
       <primitive
@@ -46,7 +22,6 @@ function AnimatedAsset(props) {
 
       <AnimatedLabel fadeInKey={"button"} fadeOutKey={"button2"} position={[1.5, 2.5, 0]}>Button</AnimatedLabel>
       <AnimatedLabel fadeInKey={"camera"} fadeOutKey={"camera2"} position={[2, 1.2, 0]}>Camera</AnimatedLabel>
-      {/* <AnimatedLabel fadeInKey={"hand"} fadeOutKey={"fullshot"} position={[0.5, 0.5, 0]}>Hand</AnimatedLabel> */}
     </group>
 
   );

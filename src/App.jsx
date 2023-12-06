@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import Landing from './Landing';
 import InfoCardsLayout from './InfoCardsLayout';
 import styles from './ProjectCard/ProjectCard.module.css';
 import './styles/global.css';
-import Scene from './BackgroundScene/Scene';
-import { AnimationTimeline } from './BackgroundScene/AnimationTimeline';
+import Scene from './Scene';
+import { AnimationTimeline } from './AnimationTimeline';
 
 /*
  * This function will calculate how much the user has scrolled (0-1)
@@ -42,9 +42,12 @@ function App() {
   return (
     <div className={styles.article_wrapper}>
       <Landing />
-      <InfoCardsLayout />
+      
 
       <Scene />
+      {/* <Scene>
+      <InfoCardsLayout />
+      </Scene> */}
       {/* <ContactInfo /> */}
     </div>
   );

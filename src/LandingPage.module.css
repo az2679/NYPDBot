@@ -24,6 +24,7 @@
   justify-content: center;
   margin: 0;
   padding: 50px;
+  opacity: 1;
 }
 
 .contact_wrapper {
@@ -56,12 +57,14 @@
   font-family: var(--ff-gloock);
   font-size: 5rem;
   color: var(--c-blue);
+  opacity: 1;
 }
 
 .info_paragraph {
   font-family: var(--ff-roboto);
   font-size: 1rem;
   color: rgb(0, 0, 0);
+  opacity: 1;
 }
 
 @media only screen and (max-width: 767px) {

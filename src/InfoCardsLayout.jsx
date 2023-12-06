@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './LandingPage.module.css';
+// import styles from './LandingPage.module.css';
 import InfoCard from './InfoCard';
 
 export default function InfoCardsLayout() {
   return (
-    <>
+    <group>
       <InfoCard
         fadeInKey={'button'}
         fadeOutKey={'button2'}
@@ -14,6 +14,7 @@ export default function InfoCardsLayout() {
         header={''}
         paragraph={`When the button is pressed, the robot will connect you to a live agent who is available 24/7 for questions, concerns, or incident reports.`}
       />
+
       <InfoCard
         left={70}
         width={20}
@@ -43,6 +44,7 @@ export default function InfoCardsLayout() {
         fadeInKey={'camera2'}
         fadeOutKey={'fullshot'}
       />
-    </>
+
+    </group>
   );
 }
