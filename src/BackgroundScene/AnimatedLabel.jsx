@@ -10,24 +10,23 @@ export default function AnimatedLabel(props) {
 
  
   useEffect(() => {
- if(labelRef.current & labelRef.current.style){
-  console.log(labelRef.current.style)
-    AnimationTimeline.to(
-      labelRef.current.style,
-      {
-        opacity:1,
-      },
-      fadeInKey
-    );
-
-    AnimationTimeline.to(
-      labelRef.current.style,
-      {
-        opacity: 0,
-      },
-      fadeOutKey
-    );
-  }
+    if (labelRef.current && labelRef.current.style) {
+      console.log(labelRef.current.style)
+      AnimationTimeline.to(
+        labelRef.current.style,
+        {
+          opacity: 1,
+        },
+        fadeInKey
+      );
+      AnimationTimeline.to(
+        labelRef.current.style,
+        {
+          opacity: 0,
+        },
+        fadeOutKey
+      );
+    }
   }, [labelRef, fadeOutKey, fadeInKey]);
 
 
