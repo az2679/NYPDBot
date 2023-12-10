@@ -64,6 +64,21 @@
   color: rgb(0, 0, 0);
 }
 
+.full_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 0;
+}
+
+.full_image img {
+  /* width: 1080px; */
+  height: 800px;
+}
+
 @media only screen and (max-width: 767px) {
   .intro_header,
   .contact_header {

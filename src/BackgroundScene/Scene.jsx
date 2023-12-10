@@ -19,7 +19,7 @@ function Scene() {
         <directionalLight color="white" position={[0, 0, 5]} />
 
         {/* We can create a background color as a child element of the canvas we just have to attach it */}
-        <color args={['white']} attach="background" />
+        {/* <color args={['white']} attach="background" /> */}
 
         {/* Objects 📦 */}
         <Suspense fallback={null}>
@@ -27,8 +27,8 @@ function Scene() {
           <AnimatedAsset />
           {/* <AnimatedLabel /> */}
 
-          <RingHighlight fadeInKey={'button2'} fadeOutKey={'button3'} position={[0, 2.9, 0]} /> 
-          <RingHighlight fadeInKey={'camera1'} fadeOutKey={'fullshot'} position={[0, 3.825, 0]} /> 
+          <RingHighlight fadeInKey={'button1'} fadeOutKey={'button3'} position={[0, 2.9, 0]} /> 
+          <RingHighlight fadeInKey={'camera3'} fadeOutKey={'specs5'} position={[0, 3.825, 0]} /> 
 
           <meshStandardMaterial roughness={0.3} metalness={0.6} />
         </Suspense>

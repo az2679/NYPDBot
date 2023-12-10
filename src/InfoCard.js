@@ -4,7 +4,7 @@ import { AnimationTimeline } from './BackgroundScene/AnimationTimeline';
 import { Html } from '@react-three/drei';
 
 export default function InfoCard(props) {
-  const { startKey, fadeInKey, fadeOutKey, left, width, top, header, paragraph } = props;
+  const { startKey, fadeInKey, fadeOutKey, endKey, left, width, top, header, paragraph } = props;
   const cardRef = useRef();
 
   useEffect(() => {
@@ -27,12 +27,19 @@ export default function InfoCard(props) {
       AnimationTimeline.to(
         cardRef.current.style,
         {
-          opacity: 0,
+          opacity: 1,
         },
         fadeOutKey
       );
+      AnimationTimeline.to(
+        cardRef.current.style,
+        {
+          opacity: 0,
+        },
+        endKey
+      );
     }
-  }, [cardRef, fadeOutKey, fadeInKey]);
+  }, [cardRef, startKey, fadeInKey, fadeOutKey, endKey]);
 
   return (
     // <Html ref={cardRef} style={{ opacity: '0' }}>
