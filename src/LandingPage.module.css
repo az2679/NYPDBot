@@ -62,6 +62,8 @@
   font-family: var(--ff-roboto);
   font-size: 1rem;
   color: rgb(0, 0, 0);
+  white-space: pre-wrap;
+  white-space: pre-line;
 }
 
 .full_image {

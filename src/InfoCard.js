@@ -4,12 +4,12 @@ import { AnimationTimeline } from './BackgroundScene/AnimationTimeline';
 import { Html } from '@react-three/drei';
 
 export default function InfoCard(props) {
-  const { startKey, fadeInKey, fadeOutKey, endKey, left, width, top, header, paragraph } = props;
+  const { startKey, fadeInKey, fadeOutKey, endKey, left, width, top, height, align, color, header, paragraph } = props;
   const cardRef = useRef();
 
   useEffect(() => {
     if (cardRef.current && cardRef.current.style) {
-      console.log(cardRef.current.style);
+      // console.log(cardRef.current.style);
       AnimationTimeline.to(
         cardRef.current.style,
         {
@@ -47,7 +47,15 @@ export default function InfoCard(props) {
       <div
         ref={cardRef}
         className={styles.info_wrapper}
-        style={{ left: `${left}vw`, width: `${width}vw`, top: `${top}vh`, opacity: '0' }}
+        style={{
+          left: `${left}vw`,
+          width: `${width}vw`,
+          top: `${top}vh`,
+          height: `${height}vh`,
+          opacity: '0',
+          justifyContent: `${align}`,
+          backgroundColor: `${color}`,
+        }}
       >
         <div className={styles.info_header}>{header}</div>
         <div className={styles.info_paragraph}>{paragraph}</div>

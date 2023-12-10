@@ -25,7 +25,7 @@
 .article_wrapper {
   position: relative;
   background-color: grey;
-  height: 300vh; /* Length of the interactive scroll article */
+  height: 400vh; /* Length of the interactive scroll article */
   top: 0;
 }
 
