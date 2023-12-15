@@ -42,25 +42,19 @@ export default function InfoCard(props) {
   }, [cardRef, startKey, fadeInKey, fadeOutKey, endKey]);
 
   return (
-    // <Html ref={cardRef} style={{ opacity: '0' }}>
-    <div>
-      <div
-        ref={cardRef}
-        className={styles.info_wrapper}
-        style={{
-          left: `${left}vw`,
-          width: `${width}vw`,
-          top: `${top}vh`,
-          height: `${height}vh`,
-          opacity: '0',
-          justifyContent: `${align}`,
-          backgroundColor: `${color}`,
-        }}
-      >
-        <div className={styles.info_header}>{header}</div>
-        <div className={styles.info_paragraph}>{paragraph}</div>
-      </div>
+    <div
+      ref={cardRef}
+      className={styles.info_wrapper}
+      style={{
+        left: `${left}vw`,
+        width: `${width}px`,
+        top: `${top}vh`,
+        height: `${height}vh`,
+        opacity: '0',
+      }}
+    >
+      <div className={styles.info_header}>{header}</div>
+      <div className={styles.info_paragraph}>{paragraph}</div>
     </div>
-    // </Html>
   );
 }

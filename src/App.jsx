@@ -2,16 +2,11 @@ import React, { useEffect } from 'react';
 
 import Landing from './Landing';
 import InfoCardsLayout from './InfoCardsLayout';
-import styles from './ProjectCard/ProjectCard.module.css';
+import styles from './LandingPage.module.css';
 import './styles/global.css';
 import Scene from './BackgroundScene/Scene';
 import { AnimationTimeline } from './BackgroundScene/AnimationTimeline';
 import HeightChart from './BackgroundScene/HeightChart';
-
-/*
- * This function will calculate how much the user has scrolled (0-1)
- * @returns {number} The percentage of how much the user has scrolled (0-1)
- */
 
 function getScrollProgress() {
   // This will calculate how many pixels the page is vertically
@@ -36,18 +31,18 @@ function App() {
         // We unregister the callback when the component unmounts
         window.onscroll = null;
       };
-
     };
   }, []);
 
   return (
     <div className={styles.article_wrapper}>
+      {/* <div className={styles.bg_image} style={{ left: '0', top: '0' }}>
+        <img src={require('./assets/timesquare_BG.jpeg')} alt={'image'}></img>
+      </div> */}
       <Landing />
       <InfoCardsLayout />
-      <HeightChart imgSrc={require('./height_chart_reference.png')} />
-
+      <HeightChart imgSrc={require('./assets/height_chart_reference.png')} />
       <Scene />
-      {/* <ContactInfo /> */}
     </div>
   );
 }

@@ -1,16 +1,16 @@
-import { useEffect, useRef } from "react";
-import { DoubleSide } from "three";
-import { AnimationTimeline } from "./AnimationTimeline";
+import { useEffect, useRef } from 'react';
+import { DoubleSide } from 'three';
+import { AnimationTimeline } from './AnimationTimeline';
 
 function RingHighlight(props) {
-  const { fadeInKey, fadeOutKey, position } = props;
+  const { fadeInKey, fadeOutKey, position, scale } = props;
   const ringRef = useRef();
 
   useEffect(() => {
     AnimationTimeline.to(
       ringRef.current.material,
       {
-        opacity: 0.25,
+        opacity: 1,
       },
       fadeInKey
     );
@@ -24,14 +24,9 @@ function RingHighlight(props) {
   }, [ringRef]);
 
   return (
-    <mesh
-      ref={ringRef}
-      // rotation={[-Math.PI / 2, 0, Math.PI / 4]}
-      position={position}
-      scale={[0.01, 0.01, 0.01]}
-    >
-      <ringGeometry args={[10, 8, 32]} />
-      <meshBasicMaterial transparent={true} opacity={0} color="blue" side={DoubleSide} />
+    <mesh ref={ringRef} position={position} scale={scale}>
+      <ringGeometry args={[0.04, 0.06, 32]} />
+      <meshBasicMaterial transparent={true} opacity={0} color="#edac00" side={DoubleSide} />
     </mesh>
   );
 }

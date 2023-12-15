@@ -1,12 +1,14 @@
 /* Import Jua and Open Sans Font Families */
 @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Roboto+Mono&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Roboto Mono', monospace;
-  background: rgb(0, 0, 0, 0);
+  background-color: var(--c-dark-blue);
   margin: 0;
 }
